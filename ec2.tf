@@ -1,5 +1,5 @@
 resource "aws_key_pair" "mykey" {
-     key_name = "mohit_21_may_key"
+     key_name = "mohit_ki_key"
      public_key = file("C:/Users/Raj/.ssh/id_rsa.pub") #path of your local system public key 
 }
 
@@ -9,7 +9,7 @@ resource "aws_instance" "my_instance1" {
   key_name      = aws_key_pair.mykey.key_name # Replace with your key pair name
   count         = 1
   security_groups = ["22_may"]
-  user_data = "${file("user_data1.sh")}"
+  user_data = "${file("prometheus.sh")}"
   tags = {
     Name        = "prometheus"
     Environment = "production"
@@ -17,7 +17,7 @@ resource "aws_instance" "my_instance1" {
   # Root EBS Volume Configuration
   root_block_device {
     volume_type = "gp2"
-    volume_size = 8 # Size in GB
+    volume_size = 10 # Size in GB
     delete_on_termination = true
   }
 }
@@ -29,7 +29,7 @@ resource "aws_instance" "my_instance2" {
   key_name      = aws_key_pair.mykey.key_name     # Replace with your key pair name
   count         = 1
   security_groups = ["22_may"]
-  user_data = "${file("user_data2.sh")}"
+  user_data = "${file("grafana.sh")}"
   tags = {
     Name        = "grafana"
     Environment = "production"

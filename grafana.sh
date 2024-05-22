@@ -18,3 +18,5 @@ sudo dpkg -i grafana-enterprise_11.0.0_amd64.deb
 /bin/systemctl enable grafana-server
 /bin/systemctl start grafana-server
 /bin/systemctl status grafana-server
+
+#paste your public_ip:3000 access dashboard 
