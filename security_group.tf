@@ -1,5 +1,5 @@
 resource "aws_security_group" "my_security_group" {
-  name        = "21_may"
+  name        = "22_may"
   description = "My example security group"
   vpc_id      = "vpc-0794fde5cab1c1c34" # Replace with your VPC ID
 
