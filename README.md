@@ -7,3 +7,15 @@ sudo apt update && sudo apt install terraform
 ```
 ## first of all you have to create s3 bucket and dynamodb table first time by manually and by terraform script after that you can you bucket and dynamodb table for locking 
 
+### in this location we can see our script is runnig or not after ssh 
+```
+ssh -i mohit.pem ubuntu@your-ec2-public-ip
+cat /var/log/cloud-init-output.log
+```
+### in this location our script file locate in ec2 
+```
+ls /var/lib/cloud/instance/scripts
+```
+### and all install data will available in / path 
+
+
